@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Comparison Slider</title>
+    <link rel="stylesheet" href="css/juxtapose.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        .juxtapose {
+            width: 80%;
+            max-width: 800px;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Image Comparison</h1>
+    <div id="slider" class="juxtapose">
+        <img src="img/links39.jpg" alt="Old View">
+        <img src="img/links41.jpg" alt="New View">
+    </div>
+
+    <script src="js/juxtapose.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (typeof juxtapose !== "undefined") {
+                new juxtapose.JXSlider(document.getElementById('slider'), [
+                    { src: 'img/links39.jpg', label: 'Old View' },
+                    { src: 'img/links41.jpg', label: 'New View' }
+                ]);
+            } else {
+                console.error("Can not load!");
+            }
+        });
+    </script>
+</body>
+
+</html>
